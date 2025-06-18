@@ -1,0 +1,63 @@
+Source: rocm-hipsolver
+Section: devel
+Priority: optional
+Maintainer: CHEN Xuan <chenxuan@iscas.ac.cn>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ libblas-dev,
+ pkg-config,
+ rocm-cmake,
+ rocm-core,
+ rocm-env,
+ rocm-hip-on-rocclr-dev,
+ rocm-hipsparse-dev,
+ rocm-llvm,
+ rocm-rocblas-dev,
+ rocm-rocsolver-dev,
+ rocm-rocsparse-dev,
+Standards-Version: 4.7.0
+Homepage: https://github.com/ROCm/hipSOLVER
+Vcs-Browser: https://github.com/r-rocm/rocm-hipsolver
+Vcs-Git: https://github.com/r-rocm/rocm-hipsolver.git
+
+Package: rocm-hipsolver
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ rocm-cmake,
+ rocm-core,
+ rocm-env,
+ rocm-hip-on-rocclr,
+ rocm-hipsparse,
+ rocm-rocblas,
+ rocm-rocsolver,
+ rocm-rocsparse,
+Description: ROCm SOLVER marshalling library  - binary
+ hipSOLVER is a LAPACK marshalling library, with multiple supported backends. It
+ sits between the application and a 'worker' LAPACK library, marshalling inputs
+ into the backend library and marshalling results back to the application.
+ hipSOLVER exports an interface that does not require the client to change,
+ regardless of the chosen backend. Currently, hipSOLVER supports rocSOLVER and
+ cuSOLVER as backends.
+
+Package: rocm-hipsolver-dev
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ rocm-hip-on-rocclr-dev,
+ rocm-hipsolver,
+ rocm-hipsparse-dev,
+ rocm-rocblas-dev,
+ rocm-rocsolver-dev,
+ rocm-rocsparse-dev,
+Description: ROCm SOLVER marshalling library  - dev
+ hipSOLVER is a LAPACK marshalling library, with multiple supported backends. It
+ sits between the application and a 'worker' LAPACK library, marshalling inputs
+ into the backend library and marshalling results back to the application.
+ hipSOLVER exports an interface that does not require the client to change,
+ regardless of the chosen backend. Currently, hipSOLVER supports rocSOLVER and
+ cuSOLVER as backends.
