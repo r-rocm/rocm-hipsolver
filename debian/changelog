@@ -1,6 +1,6 @@
 rocm-hipsolver (6.2.4-2) unstable; urgency=medium
 
-  * Add all GPU targets.
+  * Update GPU targets.
 
  -- CHEN Xuan <chenxuan@iscas.ac.cn>  Fri, 04 Jul 2025 10:16:14 +0800
 
